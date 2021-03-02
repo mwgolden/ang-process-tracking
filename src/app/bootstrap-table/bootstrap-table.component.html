@@ -1,0 +1,21 @@
+<div class="">
+  <table class='table' *ngIf="inputData">
+    <thead>
+      <tr>
+        <th *ngFor="let th of inputData.headers">{{th.value}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tr of inputData.data">
+          <td *ngFor="let th of inputData.headers">
+            <span *ngIf="th.isLink">
+              <button class="btn btn-link" (click)="EmitSelectedItem(tr)">{{tr[th.column]}}</button>
+            </span>
+            <span *ngIf="!th.isLink">
+              {{tr[th.column]}}
+            </span>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row border-bottom mb-5">
+    <div class="col">
+      <app-bootstrap-table-filters></app-bootstrap-table-filters>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-bootstrap-paginator
+        (updatePageIndex)="updatePage($event)"
+        (updatePageSize)="updateSize($event)"
+        [pagination]="pagination"></app-bootstrap-paginator>
+    </div>
+    <div class="col">
+      <button type="button" name="new-application" class="btn btn-primary" (click)="onNewItem()">New Application</button>
+    </div>
+  </div>
+  <div class="row">
+    <app-bootstrap-table
+      (selection)="onselectedItem($event)"
+      [inputData]="applications$ | async"></app-bootstrap-table>
+  </div>
+</div>
