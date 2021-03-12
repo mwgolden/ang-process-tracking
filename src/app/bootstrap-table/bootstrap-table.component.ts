@@ -21,10 +21,10 @@ export class BootstrapTableComponent implements OnInit {
 
   }
   ngOnChanges(changes:SimpleChanges): void {
-    
+
   }
 
   EmitSelectedItem($event) {
-    this.selection.emit($event)
+    this.selection.emit($event.target)
   }
 }

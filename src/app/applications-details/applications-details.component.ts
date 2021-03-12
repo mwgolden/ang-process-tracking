@@ -50,6 +50,7 @@ export class ApplicationsDetailsComponent implements OnInit {
     }else {
       this.appInfoApiService.createApplication(this.application)
     }
+    this.router.navigate([`/applications`])
   }
   onCancel(){
     this.location.back()

@@ -21,6 +21,7 @@ export class ApplicationsComponent implements OnInit {
   pageSize: number
   pageIndex: number
   pagination: PaginatorInterface
+  filters: any[]
 
   constructor(private appInfoApiService: AppInfoApiService, private router: Router, private route: ActivatedRoute) {
     this.pageSize = 50
@@ -70,6 +71,11 @@ export class ApplicationsComponent implements OnInit {
   }
   onselectedItem($event){
     this.router.navigate([`/application/${$event.applicationId}`])
+  }
+  onFilterChanged($event: Array<any>){
+    console.warn('in filter changed')
+    console.warn( $event)
+
   }
   onNewItem(): void {
       this.router.navigate([`/application`])

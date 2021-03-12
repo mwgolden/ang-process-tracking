@@ -26,7 +26,7 @@
       <div class="form-group">
         <label for="frequency">Frequency</label>
         <select class="form-control" id="frequency" name="frequency" [(ngModel)]="application.frequency">
-          <option *ngFor="let freq of frequencies" value="{{freq}}" [attr.selected]="application.frequency.toLowerCase() === freq.toLowerCase() ? true : null">{{freq}}</option>
+          <option *ngFor="let freq of frequencies" value="{{freq}}" >{{freq}}</option>
         </select>
       </div>
     </div>
@@ -34,7 +34,7 @@
       <div class="form-group">
         <label for="boundType">Bound Type</label>
         <select class="form-control" id="boundType" name="boundType" [(ngModel)]="application.boundType">
-          <option *ngFor="let bt of boundTypes" value="{{bt}}" [attr.selected]="application.boundType.toLowerCase() === bt.toLowerCase() ? true : null">{{bt}}</option>
+          <option *ngFor="let bt of boundTypes" value="{{bt}}">{{bt}}</option>
         </select>
       </div>
     </div>
